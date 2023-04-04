@@ -1,6 +1,6 @@
 <template>
   <div class="password-group">
-    <input class="password-group__input" type="text" />
+    <input readonly class="password-group__input" type="text" />
     <div class="password-group__box">
       <div class="password-group__indicator-wrapper">
         <v-indicator class="password-group__indicator"></v-indicator>
