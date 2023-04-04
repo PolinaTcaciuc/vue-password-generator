@@ -1,6 +1,9 @@
 <script setup>
 import ThePasswordGroup from "@/components/ThePasswordGroup.vue";
-
+import ThePasswordSlider from "@/components/ThePasswordSlider.vue";
+function setLengthPassword(length) {
+  console.log(length);
+}
 </script>
 <template>
   <section class="hero">
@@ -14,32 +17,48 @@ import ThePasswordGroup from "@/components/ThePasswordGroup.vue";
         </div>
       </div>
       <div class="row">
-        <div class="col-12 col-lp-6">
-          <the-password-group class="col-12 hero__password-group" ></the-password-group>
-          <v-button :arrow="true" class="col-11 col-tb-7 hero__btn"
-            >Скопировать пароль _
-          </v-button>
-          <div class="col-12">
+        <div class="col-12 col-tb-6">
           <div class="row">
-            <div class="col-6 col-md-3 mb-2">
-              <v-checkbox>Верхний регистр</v-checkbox>
+            <div class="col-12">
+              <the-password-group
+                class="hero__password-group"
+              ></the-password-group>
             </div>
-            <div class="col-6 col-md-3 mb-2">
-              <v-checkbox>Числа</v-checkbox>
+            <div class="col-12">
+              <v-button :arrow="true" class="col-11 col-tb-10 hero__btn"
+                >Скопировать пароль _
+              </v-button>
             </div>
-            <div class="col-6 col-md-3 mb-2">
-              <v-checkbox>Нижний регистр</v-checkbox>
+            <div class="col-12">
+              <the-password-slider
+                class="hero__password-slider"
+                @updateProperty="setLengthPassword"
+              ></the-password-slider>
             </div>
-            <div class="col-6 col-md-3 mb-2">
-              <v-checkbox>Символы</v-checkbox>
+            <div class="col-12">
+            <div class="row">
+              <div class="col-6 mb-3">
+                <v-checkbox>Верхний регистр</v-checkbox>
+              </div>
+              <div class="col-6 mb-3">
+                <v-checkbox>Числа</v-checkbox>
+              </div>
+              <div class="col-6 mb-3">
+                <v-checkbox>Нижний регистр</v-checkbox>
+              </div>
+              <div class="col-6 mb-3">
+                <v-checkbox>Символы</v-checkbox>
+              </div>
             </div>
           </div>
-        </div>
+          </div>
         </div>
       </div>
     </div>
   </section>
 </template>
+
+
 
 <style lang="scss">
 .hero__title {
@@ -49,7 +68,7 @@ import ThePasswordGroup from "@/components/ThePasswordGroup.vue";
 .hero__btn {
   padding: 20px 54px 20px 40px;
   font-weight: 600;
-  margin-bottom: 64px;
+  margin-bottom: 60px;
   &::after {
     content: "\f56e";
     z-index: 50000;
@@ -59,7 +78,10 @@ import ThePasswordGroup from "@/components/ThePasswordGroup.vue";
     font-family: "Font Awesome 6 Free";
   }
 }
-.hero__password-group{
+.hero__password-group {
   margin-bottom: 20px;
+}
+.hero__password-slider {
+  margin-bottom: 60px;
 }
 </style>

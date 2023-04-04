@@ -25,7 +25,7 @@
     background: var(--aqua-color);
     opacity: 0.1;
     outline: none;
-    padding: 20px 92px 20px 20px;
+   padding: 20px 92px 20px 20px;
   }
   &__box {
     position: absolute;
@@ -35,11 +35,11 @@
     display: flex;
     justify-content: space-between;
     align-items: stretch;
-    margin-right: 10px;
+     margin-right: 10px;
     width: 100px;
   }
   &__indicator-wrapper, &__btn-wrapper {
-  padding: 0px 10px;
+   padding: 0px 10px;
 }
   &__btn-wrapper {
     display: flex;
