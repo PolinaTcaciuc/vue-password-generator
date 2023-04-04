@@ -5,18 +5,12 @@ export default {
 </script>
 
 <script setup>
-import { defineProps } from "vue";
-const props = defineProps({
-  arrow: {
-    type: Boolean,
-    default: false,
-  },
-});
+
 </script>
 
 
 <template>
-  <button :class="['v-button', { 'v-button_arrow': props.arrow }]">
+  <button :class="['v-button']">
     <slot></slot>
   </button>
 </template>
@@ -38,15 +32,6 @@ const props = defineProps({
     border-bottom: 15px solid var(--black-primary);
     border-right: 15px solid transparent;
   }
-  &_arrow {
-    &::after {
-      content: "\f56e";
-      z-index: 50000;
-      right: 10%;
-      position: absolute;
-      font-weight: 900;
-      font-family: "Font Awesome 6 Free";
-    }
-  }
+
 }
 </style>

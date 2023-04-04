@@ -18,8 +18,6 @@ const props = defineProps({
 let tag = computed(() => `h${Math.min(Math.max(props.level, 1), 6)}`);
 </script>
 
-
-
 <template>
   <component
     :is="tag"
