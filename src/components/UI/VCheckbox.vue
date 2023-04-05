@@ -33,6 +33,7 @@ export default {
 }
 .checkbox_fake {
   display: inline-block;
+  flex: 0 0 auto;
   width: 24px;
   position: relative;
   height: 24px;

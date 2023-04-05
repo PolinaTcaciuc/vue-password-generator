@@ -1,11 +1,14 @@
 <script setup>
-import ThePasswordGroup from "@/components/ThePasswordGroup.vue";
-import ThePasswordSlider from "@/components/ThePasswordSlider.vue";
+import PasswordInput from "@/components/PasswordInput.vue";
+import PasswordLengthSlider from "@/components/PasswordLengthSlider.vue";
+import TheFooter from "@/components/TheFooter.vue";
+
 function setLengthPassword(length) {
   console.log(length);
 }
 </script>
 <template>
+  <main class="main">
   <section class="hero">
     <div class="container">
       <div class="row">
@@ -19,10 +22,11 @@ function setLengthPassword(length) {
       <div class="row">
         <div class="col-12 col-tb-6">
           <div class="row">
-            <div class="col-12">
-              <the-password-group
-                class="hero__password-group"
-              ></the-password-group>
+            <div class="col-1,
+                        TheFooter2">
+              <password-input
+                class="hero__password-input"
+              ></password-input>
             </div>
             <div class="col-12">
               <v-button :arrow="true" class="col-11 col-tb-10 hero__btn"
@@ -30,10 +34,10 @@ function setLengthPassword(length) {
               </v-button>
             </div>
             <div class="col-12">
-              <the-password-slider
+              <password-length-slider
                 class="hero__password-slider"
                 @updateProperty="setLengthPassword"
-              ></the-password-slider>
+              ></password-length-slider>
             </div>
             <div class="col-12">
             <div class="row">
@@ -56,9 +60,9 @@ function setLengthPassword(length) {
       </div>
     </div>
   </section>
+</main>
+<the-footer></the-footer>
 </template>
-
-
 
 <style lang="scss">
 .hero__title {
@@ -78,7 +82,7 @@ function setLengthPassword(length) {
     font-family: "Font Awesome 6 Free";
   }
 }
-.hero__password-group {
+.hero__password-input {
   margin-bottom: 20px;
 }
 .hero__password-slider {
